@@ -7,6 +7,7 @@ namespace TextSplit.Domain
     public class ApplicationSettings
     {
         public SerilogSettings Serilog { get; set; }
+        public HostingSettings Hosting { get; set; }
 
         public static ApplicationSettings New(string environment = null, Action<ApplicationSettings> settingsAction = null)
         {
@@ -24,7 +25,9 @@ namespace TextSplit.Domain
                             { "Microsoft", "Warning" },
                         }
                     }
-                }
+                },
+                Hosting = new HostingSettings{ }
+                
             };
 
             if (environment.IsEmpty())
@@ -86,6 +89,11 @@ namespace TextSplit.Domain
                 public string Default { get; set; }
                 public Dictionary<string, string> Override { get; set; }
             }
+        }
+
+        public class HostingSettings
+        {
+            public string CorsHosts { get; set; }
         }
     }
 }

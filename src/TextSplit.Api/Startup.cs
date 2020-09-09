@@ -20,6 +20,7 @@ using Serilog;
 using TextSplit.Api.Filters;
 using TextSplit.Api.Middleware;
 using TextSplit.Domain;
+using TextSplit.Domain.Extensions;
 using TextSplit.Domain.Shared;
 
 namespace TextSplit.Api
@@ -28,6 +29,8 @@ namespace TextSplit.Api
     {
         public IConfiguration Configuration { get; }
         private ApplicationSettings ApplicationSettings { get; set; }
+
+        private const string CorsPolicyName = "TextSplit-CorsPolicy";
 
         public Startup(IConfiguration configuration)
         {
@@ -46,6 +49,15 @@ namespace TextSplit.Api
             services.AddApplicationInsightsTelemetry();
 
             services.AddDomain(ApplicationSettings);
+
+            // Api Cors
+            services.AddCors(options =>
+            {
+                var origins = (ApplicationSettings.Hosting.CorsHosts).IsEmpty() ? new string[] { } :
+                    ApplicationSettings.Hosting.CorsHosts.Split(',').Select(e => e.Trim()).ToArray();
+                options.AddPolicy(CorsPolicyName,
+                    builder => builder.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod());
+            });
 
             services
                 .AddControllers(options =>
@@ -106,6 +118,7 @@ namespace TextSplit.Api
             });
 
             app.UseRouting();
+            app.UseCors(CorsPolicyName);
 
             app.UseMiddleware<SerilogMiddleware>();
 

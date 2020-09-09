@@ -1,0 +1,10 @@
+.match-page {
+  width: 100%;
+  @include display-flex;
+  @include flex-column;
+  @include align-center;
+
+  .card {
+    width: 500px;
+  }
+}
