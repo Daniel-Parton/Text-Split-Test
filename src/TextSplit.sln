@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSplit.Api", "TextSplit.Api\TextSplit.Api.csproj", "{89096459-BF88-4EA8-A9CB-386111F24005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSplit.Domain", "TextSplit.Domain\TextSplit.Domain.csproj", "{B6CA4C74-77D0-4D62-A228-680056023651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSplit.ApiContracts", "TextSplit.ApiContracts\TextSplit.ApiContracts.csproj", "{F77EBFFE-D31F-4520-A91E-37ECD11CFD81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSplit.Test", "TextSplit.Test\TextSplit.Test.csproj", "{8B597CAD-9A67-4BDF-9882-4E51F5769221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSplit.ApiClient", "TextSplit.ApiClient\TextSplit.ApiClient.csproj", "{CC3DECE6-69D6-4C98-93DA-D0A916D9C57B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89096459-BF88-4EA8-A9CB-386111F24005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89096459-BF88-4EA8-A9CB-386111F24005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89096459-BF88-4EA8-A9CB-386111F24005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89096459-BF88-4EA8-A9CB-386111F24005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6CA4C74-77D0-4D62-A228-680056023651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6CA4C74-77D0-4D62-A228-680056023651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6CA4C74-77D0-4D62-A228-680056023651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6CA4C74-77D0-4D62-A228-680056023651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77EBFFE-D31F-4520-A91E-37ECD11CFD81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77EBFFE-D31F-4520-A91E-37ECD11CFD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77EBFFE-D31F-4520-A91E-37ECD11CFD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77EBFFE-D31F-4520-A91E-37ECD11CFD81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B597CAD-9A67-4BDF-9882-4E51F5769221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B597CAD-9A67-4BDF-9882-4E51F5769221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B597CAD-9A67-4BDF-9882-4E51F5769221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B597CAD-9A67-4BDF-9882-4E51F5769221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3DECE6-69D6-4C98-93DA-D0A916D9C57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3DECE6-69D6-4C98-93DA-D0A916D9C57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3DECE6-69D6-4C98-93DA-D0A916D9C57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3DECE6-69D6-4C98-93DA-D0A916D9C57B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FD3A684-92CF-486F-B9BE-939F75E5F880}
+	EndGlobalSection
+EndGlobal

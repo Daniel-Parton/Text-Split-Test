@@ -1,0 +1,18 @@
+$minHeight: 160px;
+.block-ui {
+  &.full-page-loading {
+    position: static;
+  }
+
+  &[aria-busy="true"] {
+    .block-ui-content {
+      min-height: $minHeight;
+      .card {
+        min-height: $minHeight;
+      }
+    }
+  }
+}
+.block-ui-container {
+  z-index: 98  !important;
+}

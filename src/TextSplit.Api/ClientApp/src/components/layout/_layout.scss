@@ -1,0 +1,16 @@
+.main-content {
+  overflow-x: scroll;
+  padding: 20px;
+  margin-left: 0;
+  height: 100vh;
+  width: 100%;
+  nav.navbar {
+    width: 100%;
+
+    .navbar-brand {
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
