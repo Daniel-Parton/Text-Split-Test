@@ -1,0 +1,6 @@
+.list {
+    .list-action-container {
+        @include display-flex;
+        @include justify-end;
+    }
+}

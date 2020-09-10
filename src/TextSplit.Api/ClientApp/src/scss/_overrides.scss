@@ -1,0 +1,80 @@
+/* import the necessary Bootstrap files */
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+$theme-colors: (
+  primary: #6152ee,
+  secondary: #e1e1ef
+);
+
+$body-bg: #f2f3f8;
+
+/* finally, import Bootstrap */
+@import "node_modules/bootstrap/scss/bootstrap";
+
+html, body {
+  font-family: 'H', 'Trebuchet MS', Helvetica;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//Button Overrides
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: .65rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+//Tables
+.table {
+  thead {
+    th {
+      border-bottom: none;
+    }
+  }
+  td, th {
+    padding: 0.5em;
+    border-top: none;
+  }
+  tr {
+    border-bottom: 1px solid #f0f3ff;
+  }
+}
+
+//Modals
+.modal-open {
+  .modal {
+    overflow-y: hidden;
+
+  }
+}
+.modal {
+  .modal-dialog {
+    @include animated;
+    @include bounceIn;
+  }
+}
+
+//React Toast Notifications
+.react-toast-notifications__container {
+  z-index: 1051 !important;
+}

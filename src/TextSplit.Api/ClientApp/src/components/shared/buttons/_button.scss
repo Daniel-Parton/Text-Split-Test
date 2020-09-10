@@ -1,0 +1,132 @@
+.btn {
+
+  &.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+  
+  &.btn-transparent {
+    border-radius: 50%;
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    &:hover, &:focus, &:active {
+      background-color: #f5f5f5;
+    }
+  }
+
+  &.btn-no-hover {
+    &:hover, &:focus, &:active {
+      background-color: inherit;
+    }
+  }
+
+  &.btn-rounded {
+    border-radius: 50%;
+  }
+
+  svg {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+
+    &.icon-primary {
+      color: theme-color('primary');
+    }
+
+    &.icon-secondary {
+      color: theme-color('secondary');
+    }
+  }
+}
+
+.btn-icon-only {
+  height: 2rem;
+  width: 2rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.btn-hamburger {
+
+  font: inherit;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: .15s;
+  transition-property: opacity,filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &.btn-hamburger-active {
+    .hamburger-inner::after {
+      transform: translate3d(-8px,0,0) rotate(-45deg) scaleX(.7);
+      right: -16px;
+    }
+
+    .hamburger-inner::before {
+      transform: translate3d(-8px,0,0) rotate(45deg) scaleX(.7);
+      right: -16px;
+    }
+  }
+
+  &.btn-hamburger-dark {
+    .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+      background-color: black;
+    }
+  }
+
+  .hamburger-box {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+
+    .hamburger-inner {
+      top: 50%;
+      display: block;
+    }
+
+    .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: 3px;
+    }
+
+    .hamburger-inner::after {
+      bottom: -7px;
+    }
+
+    .hamburger-inner::before {
+      top: -7px;
+    }
+    .hamburger-inner::after, .hamburger-inner::before {
+      display: block;
+      content: "";
+    }
+  }
+}

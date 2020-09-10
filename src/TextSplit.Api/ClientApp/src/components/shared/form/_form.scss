@@ -1,0 +1,243 @@
+.form {
+  &.form-inside-card {
+    padding: 2rem 3rem;
+    background: gray("100");
+    border: solid 1px gray("600");
+    border-radius: 10px;
+  }
+}
+
+//Form Wrapper
+.form-control-wrapper {
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  //Used in checkbox
+  &.has-stacked-label {
+    margin-bottom: 30px;
+  }
+
+  //Used in checkbox
+  &.no-stacked-label {
+    margin-top: 35px;
+
+    .check-radio-control {
+      margin-bottom: 0px;
+    }
+  }
+
+  &.invalid {
+      input, .form-multi-select__control, textarea, input:focus, textarea:focus, .form-control, .form-control:focus {
+          border-color:  theme-color-level("danger", -5);
+          outline: 0;
+          box-shadow:  0 0 0 0.2rem rgba(165, 5, 5, 0.26);
+      }
+
+      &.form-multi-select {
+        input {
+          border-color:  none;
+          box-shadow:  none;
+        }
+      }
+
+      .control_indicator {
+        border-color: theme-color("danger");
+      }
+  }
+
+  .form-async-select__control--is-focused {
+      border-color: theme-color("primary");
+      box-shadow: 0 0 0 1px theme-color("primary");
+      &:hover {
+        border-color: theme-color("primary");
+      box-shadow: 0 0 0 1px theme-color("primary");
+    }
+  }
+
+  .form-error-message {
+    font-size: 0.8em;
+    position: absolute;
+    display: block;
+    bottom: -19px;
+  }
+}
+
+.form-error-message {
+  color: theme-color("danger");
+}
+
+//Checkbox-radio
+.check-radio-control {
+  font-family: arial;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+  padding-top: 3px;
+  font-size: 16px;
+  min-height: 25px;
+  cursor: pointer;
+
+  * {
+      cursor: pointer;
+  }
+
+  input {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      height: 20px;
+      width: 20px;
+      left: 0;
+      top: 2px;
+  }
+
+  .inner-label {
+    margin-left: 25px;
+  }
+}
+
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border: solid 1px #a9a9a9;
+}
+
+.control-radio .control_indicator {
+  border-radius: 50%;
+
+  &::before {
+      border-radius: 50%;
+  }
+}
+
+.check-radio-control:hover input ~ .control_indicator,
+.check-radio-control input:focus ~ .control_indicator {
+  border-color: theme-color("primary");
+}
+
+.check-radio-control input:checked ~ .control_indicator {
+  background: theme-color("primary");
+
+  &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 4px solid #fff;
+  }
+
+  &::after {
+      content: none;
+  }
+}
+
+.check-radio-control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.check-radio-control input:checked ~ .control_indicator:after {
+  display: block;
+}
+
+.control-checkbox .control_indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: #7b7b7b;
+}
+
+.control-radio .control_indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.control-radio input:disabled ~ .control_indicator:after {
+  background: #7b7b7b;
+}
+
+//Input
+.form-input {
+  .form-input-post-content {
+    margin-left: 0.3em;
+  }
+}
+
+//Input Icon
+$input-icon-padding: 30px;
+$input-icon-offset: 9px;
+
+.input-with-icon {
+  position: relative;
+  
+  &.input-with-icon-left {
+    input {
+      padding-left: $input-icon-padding;
+    }
+  }
+
+  &.input-with-icon-right {
+    input {
+      padding-right: $input-icon-padding;
+    }
+  }
+  
+
+  svg.input-icon-left, svg.input-icon-right {
+    position: absolute;
+    bottom: 12px;
+  }
+
+  svg.input-icon-left {
+    left: $input-icon-offset;
+  }
+
+  svg.input-icon-right {
+    right: $input-icon-offset;
+  }
+}
+
+.form-multi-select__control, .form-async-select__control {
+  .form-multi-select__value-container > div {
+    width: auto !important; //Fixes the issue with tags forcing an inline width out of my control.  Pretty cool
+  }
+}
+
+.form-async-typeahead {
+  .form-async-select__control {
+    cursor: text;
+  }
+}
+
+//Form Display
+.form-display {
+  &.form-display-inline {
+    
+  }
+}

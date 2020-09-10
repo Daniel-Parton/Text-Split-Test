@@ -1,0 +1,23 @@
+.standard-page {
+  width: 100%;
+  height: 100%;
+  @include display-flex;
+  @include flex-column; 
+  @include justify-center;
+
+  .standard-page-inner-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    text-align: center;
+
+    .standard-page-logo-container {
+      img {
+        width: 200px;
+      }
+    }
+    .standard-page-title-container {
+    
+    }
+  }
+}
