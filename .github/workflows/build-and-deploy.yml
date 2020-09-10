@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - "*"
 
 env:
   AZURE_WEBAPP_NAME: "Text-Split"
