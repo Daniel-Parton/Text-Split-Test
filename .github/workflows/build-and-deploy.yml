@@ -4,7 +4,8 @@ on: [pull_request]
 
 env:
   AZURE_WEBAPP_NAME: "Text-Split"
-  AZURE_WEBAPP_PACKAGE_PATH: "./src/TextSplit.Api"
+  AZURE_WEBAPP_PATH: "./src/TextSplit.Api"
+  AZURE_WEBAPP_PATH_PUBLISH_PATH: "./packages/"
   DOTNET_VERSION: "3.1.100" # set this to the dot net version to use
 
 jobs:
@@ -23,8 +24,9 @@ jobs:
       # Run dotnet build and publish
       - name: dotnet build and publish
         run: |
+          cd '${{env.AZURE_WEBAPP_PATH}}'
           dotnet build --configuration Release
-          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+          dotnet publish -c Release -o '../../packages'
 
       # Deploy to Azure Web apps
       - name: "Run Azure webapp deploy action using publish profile credentials"
@@ -32,4 +34,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
-          package: "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp"
+          package: "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/"
