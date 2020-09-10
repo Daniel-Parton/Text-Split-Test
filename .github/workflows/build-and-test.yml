@@ -1,11 +1,9 @@
-name: R6Stats.NET API CI/CD
+name: Build and Test
 
 on: [push, pull_request]
 
 env:
-  AZURE_WEBAPP_NAME: R6Stats-NET # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: "./src" # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: "3.1.100" # set this to the dot net version to use
+  DOTNET_VERSION: "3.1.0" # set this to the dot net version to use
 
 jobs:
   build-and-deploy:
@@ -22,10 +20,10 @@ jobs:
 
       # Build
       - name: dotnet build
-      - uses: actions/checkout@v1
-        run: powershell .\scripts\build.ps1
+        run: .\scripts\build.ps1
+        shell: powershell
 
       # Build
       - name: dotnet test
-      - uses: actions/checkout@v1
-        run: powershell .\scripts\test.ps1
+        run: .\scripts\test.ps1
+        shell: powershell
