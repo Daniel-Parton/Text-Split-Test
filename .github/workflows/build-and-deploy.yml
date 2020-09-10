@@ -4,7 +4,7 @@ on: [pull_request]
 
 env:
   AZURE_WEBAPP_NAME: "Text-Split"
-  AZURE_WEBAPP_PACKAGE_PATH: "/src/TextSplit.Api"
+  AZURE_WEBAPP_PACKAGE_PATH: "./src/TextSplit.Api"
   DOTNET_VERSION: "3.1.100" # set this to the dot net version to use
 
 jobs:
