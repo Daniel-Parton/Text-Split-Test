@@ -46,7 +46,7 @@ const FormikSideEffects: React.FC<FormikSideEffectsProps & BaseFormikContextProp
 				}
 			}
 		}, 300);
-	}, []);
+	}, []); //eslint-disable-line react-hooks/exhaustive-deps
 
 	React.useEffect(
 		() => {
