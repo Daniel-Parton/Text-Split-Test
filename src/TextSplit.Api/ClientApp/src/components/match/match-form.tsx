@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AutoForm } from '../shared';
 import { MatchResponse, MatchRequest } from '../../api/match/api-models';
 import { required, maxCharLength } from '../shared/form/validators';
 import * as MatchApi from '../../api/match';
-import { AxiosResponse } from 'axios';
 
 export interface MatchData {
   request: MatchRequest

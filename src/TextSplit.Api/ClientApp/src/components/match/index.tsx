@@ -4,10 +4,8 @@ import { useToasts } from "react-toast-notifications";
 import { RouteComponentProps } from 'react-router';
 import { CardSimple, ChipList, FormDisplay, Button } from '../shared';
 import ToastHelper from '../../helpers/toast-helper';
-import { MatchResponse, MatchRequest } from '../../api/match/api-models';
 import Form, { MatchData } from './match-form';
 import { ChipProps } from '../shared/chips/chip';
-import { required } from '../shared/form/validators';
 
 interface MatchPageProps extends RouteComponentProps {
 }
