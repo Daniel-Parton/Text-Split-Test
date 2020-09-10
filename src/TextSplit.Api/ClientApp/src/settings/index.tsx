@@ -6,7 +6,7 @@ export interface AppSettingsProps {
   localCypressTestEnabled: boolean
 }
 
-export const cypressTestCookieName = 'Dashies-Cypress-Test';
+export const cypressTestCookieName = 'Cypress-Test';
 
 const getAppSettings = () => {
   let appSettings: AppSettingsProps = {
@@ -19,8 +19,8 @@ const getAppSettings = () => {
     appSettings.appUrl = devAppUrl;
     appSettings.baseApiUrl = `${devAppUrl}/api`;
   } else {
-    appSettings.appUrl = '#{AppUrl}';
-    appSettings.baseApiUrl = '#{BaseApiUrl}';
+    appSettings.appUrl = 'https://text-split.azurewebsites.net/';
+    appSettings.baseApiUrl = 'https://text-split.azurewebsites.net/api';
   }
   return appSettings;
 }
