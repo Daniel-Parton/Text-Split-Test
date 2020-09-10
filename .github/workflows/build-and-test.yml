@@ -1,6 +1,6 @@
 name: Build and Test
 
-on: [push, pull_request]
+on: [pull_request]
 
 env:
   DOTNET_VERSION: "3.1.100" # set this to the dot net version to use
