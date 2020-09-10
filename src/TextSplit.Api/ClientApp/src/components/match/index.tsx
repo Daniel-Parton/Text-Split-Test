@@ -30,7 +30,7 @@ const MatchPage: React.FC<MatchPageProps> = (props) => {
 
   return (
     <div className='match-page'>
-      <CardSimple>
+      <CardSimple container>
         {!state.data && (
           <Form onSuccess={handleSuccess} />
         )}
